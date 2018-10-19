@@ -259,7 +259,7 @@ geometry_msgs::Twist PurePursuit::calcTwist(double curvature, double cmd_velocit
   twist.linear.x = cmd_velocity;
   if (!following_flag)
   {
-    //ROS_ERROR_STREAM("Not following");
+    ROS_ERROR_STREAM("Not following");
     twist.angular.z = current_velocity_.twist.linear.x * curvature;
   }
   else
@@ -370,7 +370,7 @@ geometry_msgs::TwistStamped PurePursuit::go()
     ROS_WARN("lost next waypoint");
     return outputZero();
   }
-  //ROS_ERROR_STREAM("next waypoint = " <<  num_of_next_waypoint_);
+  ROS_ERROR_STREAM("next waypoint = " <<  num_of_next_waypoint_);
 
   // if g_linear_interpolate_mode is false or next waypoint is first or last
   if (!linear_interpolate_ || num_of_next_waypoint_ == 0 ||
