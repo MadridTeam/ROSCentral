@@ -4,7 +4,7 @@ import tensorflow as tf
 import numpy as py
 import time
 class TLClassifier(object):
-def __init__(self, simulation):
+    def __init__(self, simulation):
 
         # default status
         self.current_status = TrafficLight.UNKNOWN
