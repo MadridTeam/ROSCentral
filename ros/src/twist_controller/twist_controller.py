@@ -87,10 +87,10 @@ class Controller(object):
             linear_vel, angular_vel, current_vel)
         steering = self.steer_lpf.filt(steering)
 
-        rospy.logwarn('linear: %s, current: %s, error: %s',
-                      linear_vel, current_vel, vel_error)
-        rospy.logwarn('angular: %s', angular_vel)
-        rospy.logwarn('throttle: %s, brake: %s, steer: %s',
-                      throttle, brake, steering)
+        #rospy.logwarn('linear: %s, current: %s, error: %s',
+        #              linear_vel, current_vel, vel_error)
+        #rospy.logwarn('angular: %s', angular_vel)
+        #rospy.logwarn('throttle: %s, brake: %s, steer: %s',
+        #              throttle, brake, steering)
                       
         return throttle, brake, steering
