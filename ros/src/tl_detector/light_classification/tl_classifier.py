@@ -1,8 +1,10 @@
 from styx_msgs.msg import TrafficLight
 import os
 import tensorflow as tf
-import numpy as py
+import numpy as np
 import time
+import rospy
+
 class TLClassifier(object):
     def __init__(self, simulation):
 
@@ -123,5 +125,5 @@ class TLClassifier(object):
         # Set it to object attribute for visualization topic output
         # Can be disabled to gain a few ms in performance
         self.image_np_output = image
-
+        rospy.logwarn('Detected Light: %s', self.current_light)
         return self.current_light
