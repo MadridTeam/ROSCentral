@@ -91,7 +91,7 @@ class TLClassifier(object):
             classes = np.squeeze(classes).astype(np.int32)
 
             # Set a Classification threshold
-            classification_threshold = .50
+            classification_threshold = .20
 
             # Iterate the boxes to get all detections
             for i in range(boxes.shape[0]):
@@ -105,9 +105,12 @@ class TLClassifier(object):
 
                     if class_name == 'traffic_light-red':
                         self.current_light = TrafficLight.RED
+                        rospy.logerr('Detected Light: RED')
                     elif class_name == 'traffic_light-green':
                         self.current_light = TrafficLight.GREEN
+                        rospy.logerr('Detected Light: GREEN')
                     elif class_name == 'traffic_light-yellow':
+                        rospy.logerr('Detected Light: YELLOW')
                         self.current_light = TrafficLight.YELLOW
 
                     # Depth estimation
@@ -125,5 +128,5 @@ class TLClassifier(object):
         # Set it to object attribute for visualization topic output
         # Can be disabled to gain a few ms in performance
         self.image_np_output = image
-        rospy.logwarn('Detected Light: %s', self.current_light)
+        #rospy.logwarn('Detected Light: %s', self.current_light)
         return self.current_light

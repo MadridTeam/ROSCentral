@@ -166,7 +166,7 @@ class TLDetector(object):
 
         if closest_light:
             state = self.get_light_state(closest_light)
-            rospy.logerr("Manish: {}, {}".format(line_wp_idx, state))
+            rospy.logerr("{}, {}".format(line_wp_idx, state))
             return line_wp_idx, state
         #self.waypoints = None
         return -1, TrafficLight.UNKNOWN

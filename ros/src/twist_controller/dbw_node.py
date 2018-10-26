@@ -62,7 +62,7 @@ class DBWNode(object):
 
         self.throttle = self.brake = self.steering = 0.
 
-        self.rate = 10
+        self.rate = 50
 
         self.controller = Controller(vehicle_mass=vehicle_mass,
                                      fuel_capacity=fuel_capacity,
